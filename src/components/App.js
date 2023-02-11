@@ -3,10 +3,25 @@ import '../styles/App.css';
 
 const App = () => {
 //code here 
+  const [className, setClassName] = useState("redColor");
+  const [value, setValue] = useState(true);
+  
+  const updateOnClick = () => {
+    setValue(!value);
+  }
+  useEffect( ()=>{
+    if(value == true){
+      setClassName("redColor");
+    }
+    else{
+      setClassName("blueColor");
+    }
+  })
+  
   return (
     <div id="main">
-      <p className={} >Newton School</p>
-      <button id='button' onClick={}>Change Style</button>
+      <h1 className={className} >Newton School</h1>
+      <button id='button' onClick={updateOnClick}>Change Style</button>
     </div>
   )
 }
